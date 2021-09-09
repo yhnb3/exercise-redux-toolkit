@@ -13,7 +13,7 @@ export default function Counter({ value1, value2 }) {
       </div>
       <div>
         <button onClick={() => dispatch(decrement(2))}>minus</button>
-        <span>{value2}</span>
+        <span>{value2}</span>cd
         <button onClick={() => dispatch(increment(2))}>plus</button>
       </div>
     </div>
