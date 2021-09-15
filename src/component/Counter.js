@@ -1,6 +1,10 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { decrement, increment } from "../reducer/counterSlice";
+import {
+  decrement,
+  increment,
+  incrementAsyncAmount,
+} from "../reducer/counterSlice";
 
 export default function Counter({ value1, value2 }) {
   const dispatch = useDispatch();
@@ -13,8 +17,13 @@ export default function Counter({ value1, value2 }) {
       </div>
       <div>
         <button onClick={() => dispatch(decrement(2))}>minus</button>
-        <span>{value2}</span>cd
+        <span>{value2}</span>
         <button onClick={() => dispatch(increment(2))}>plus</button>
+      </div>
+      <div>
+        <button onClick={() => dispatch(incrementAsyncAmount(2))}>
+          비동기 2+
+        </button>
       </div>
     </div>
   );

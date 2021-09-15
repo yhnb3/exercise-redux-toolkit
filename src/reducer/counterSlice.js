@@ -21,6 +21,12 @@ export const slice = createSlice({
 
 export const { increment, decrement, incrementByAmount } = slice.actions;
 
+export const incrementAsyncAmount = (amount) => (dispatch) => {
+  setTimeout(() => {
+    dispatch(incrementByAmount({ id: 2, value: amount }));
+  }, 1000);
+};
+
 export const selectCount = (state) => state.counter;
 
 export default slice.reducer;
